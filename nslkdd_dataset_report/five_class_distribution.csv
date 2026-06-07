@@ -1,0 +1,6 @@
+class,train_count,test_count
+Normal,67343,9711
+DoS,45927,7460
+Probe,11656,2421
+R2L,995,2885
+U2R,52,67

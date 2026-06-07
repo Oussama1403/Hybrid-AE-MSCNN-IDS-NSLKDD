@@ -1,0 +1,4 @@
+label_status,sample_count,sample_share,sample_share_pct
+Known (exists in KDDTrain+),18794,0.8336586231369766,83.36586231369766
+Unknown (zero-day in KDDTest+),3750,0.16634137686302342,16.634137686302342
+Total,22544,1.0,100.0

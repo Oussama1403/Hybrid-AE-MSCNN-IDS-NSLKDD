@@ -1,0 +1,136 @@
+[Run] Artifact directory: /kaggle/working/training_runs/run_20260504_022940_577094
+[Run] Config file: /kaggle/working/training_runs/run_20260504_022940_577094/run_config.json
+[Data] Dataset directory: /kaggle/input/datasets/hassan06/nslkdd
+[Data] Using official KDDTrain+/KDDTest+ split
+=== Split and Unknown Attack Summary ===
+Train rows: 125973
+Test rows:  22544
+Unknown attack types in test: 17
+Unknown attack records in test: 3750
+
+Using device: cuda
+[Mode] AE latent fusion enabled: concatenating AE latent vectors to CNN inputs.
+[Mode] Residual vector fusion enabled: concatenating standardized |X - AE(X)| vectors to CNN input (weight=1.000).
+[Mode] Binary CNN + AE booster enabled: CNN is binary (normal/attack) and AE forces attack when q >= 0.96.
+[Mode] Calibrator-only optimization enabled: fpr_grid=[0.1, 0.12, 0.14, 0.16], recon_stats_grid=[1], temperature_grid=[1.0], objective=recall_balanced, target_fpr=0.120, target_fpr_weight=0.500.
+[AE] Epoch 001 | train_mse=0.156132 | val_mse=0.041610
+[AE] Epoch 002 | train_mse=0.082744 | val_mse=0.018435
+[AE] Epoch 003 | train_mse=0.066324 | val_mse=0.017800
+[AE] Epoch 004 | train_mse=0.074948 | val_mse=0.019821
+[AE] Epoch 005 | train_mse=0.067534 | val_mse=0.019874
+[AE] Epoch 006 | train_mse=0.062212 | val_mse=0.013546
+[AE] Epoch 007 | train_mse=0.055739 | val_mse=0.019422
+[AE] Epoch 008 | train_mse=0.065369 | val_mse=0.020366
+[AE] Epoch 009 | train_mse=0.066680 | val_mse=0.022759
+[AE] Epoch 010 | train_mse=0.070949 | val_mse=0.014784
+[AE] Epoch 011 | train_mse=0.039875 | val_mse=0.011159
+[AE] Epoch 012 | train_mse=0.041271 | val_mse=0.023529
+[AE] Epoch 013 | train_mse=0.051404 | val_mse=0.012388
+[AE] Epoch 014 | train_mse=0.029846 | val_mse=0.008765
+[AE] Epoch 015 | train_mse=0.027904 | val_mse=0.009111
+[AE] Epoch 016 | train_mse=0.030088 | val_mse=0.011795
+[AE] Epoch 017 | train_mse=0.026188 | val_mse=0.010132
+[AE] Epoch 018 | train_mse=0.039682 | val_mse=0.013467
+[AE] Epoch 019 | train_mse=0.039113 | val_mse=0.009316
+[AE] Epoch 020 | train_mse=0.030001 | val_mse=0.009994
+[AE] Epoch 021 | train_mse=0.039167 | val_mse=0.014096
+[AE] Epoch 022 | train_mse=0.029534 | val_mse=0.025233
+[AE] Epoch 023 | train_mse=0.035679 | val_mse=0.009201
+[AE] Epoch 024 | train_mse=0.042800 | val_mse=0.011752
+[AE] Epoch 025 | train_mse=0.035924 | val_mse=0.015512
+[AE] Epoch 026 | train_mse=0.047621 | val_mse=0.011299
+[AE] Epoch 027 | train_mse=0.038482 | val_mse=0.011238
+[AE] Epoch 028 | train_mse=0.039409 | val_mse=0.014245
+[AE] Epoch 029 | train_mse=0.033822 | val_mse=0.007721
+[AE] Epoch 030 | train_mse=0.026304 | val_mse=0.008361
+
+=== Borderline-SMOTE Stats (classifier branch raw train split features) ===
+Class0 before: 57242 | after: 57242
+Class1 before: 49835 | after: 57242
+k_neighbors used: 5
+[CNN] Variant=multiscale_stem | input_dim=308 | num_classes=2 | base_channels=32 | stem_dim=64
+[CNN] Epoch 001 | train_loss=0.145369 | val_loss=0.087132 | train_acc=0.9610 | val_acc=0.9869 | val_macro_f1=0.9868
+[CNN] Epoch 002 | train_loss=0.100173 | val_loss=0.082716 | train_acc=0.9819 | val_acc=0.9872 | val_macro_f1=0.9871
+[CNN] Epoch 003 | train_loss=0.094520 | val_loss=0.080376 | train_acc=0.9837 | val_acc=0.9899 | val_macro_f1=0.9899
+[CNN] Epoch 004 | train_loss=0.090232 | val_loss=0.100110 | train_acc=0.9865 | val_acc=0.9894 | val_macro_f1=0.9894
+[CNN] Epoch 005 | train_loss=0.087965 | val_loss=0.073674 | train_acc=0.9865 | val_acc=0.9913 | val_macro_f1=0.9912
+[CNN] Epoch 006 | train_loss=0.085082 | val_loss=0.502345 | train_acc=0.9881 | val_acc=0.7891 | val_macro_f1=0.7776
+[CNN] Epoch 007 | train_loss=0.084611 | val_loss=0.072527 | train_acc=0.9884 | val_acc=0.9933 | val_macro_f1=0.9933
+[CNN] Epoch 008 | train_loss=0.081820 | val_loss=0.074070 | train_acc=0.9893 | val_acc=0.9914 | val_macro_f1=0.9914
+[CNN] Epoch 009 | train_loss=0.081287 | val_loss=0.182986 | train_acc=0.9896 | val_acc=0.9332 | val_macro_f1=0.9331
+[CNN] Epoch 010 | train_loss=0.081442 | val_loss=0.075036 | train_acc=0.9892 | val_acc=0.9923 | val_macro_f1=0.9922
+[CNN] Epoch 011 | train_loss=0.078490 | val_loss=0.206305 | train_acc=0.9907 | val_acc=0.9001 | val_macro_f1=0.9001
+[CNN] Epoch 012 | train_loss=0.078410 | val_loss=0.071478 | train_acc=0.9910 | val_acc=0.9925 | val_macro_f1=0.9925
+[CNN] Epoch 013 | train_loss=0.077425 | val_loss=0.077015 | train_acc=0.9912 | val_acc=0.9903 | val_macro_f1=0.9902
+[CNN] Epoch 014 | train_loss=0.077387 | val_loss=0.085492 | train_acc=0.9914 | val_acc=0.9859 | val_macro_f1=0.9858
+[CNN] Epoch 015 | train_loss=0.077502 | val_loss=0.071907 | train_acc=0.9914 | val_acc=0.9926 | val_macro_f1=0.9926
+[CNN] Epoch 016 | train_loss=0.076098 | val_loss=0.073059 | train_acc=0.9919 | val_acc=0.9914 | val_macro_f1=0.9914
+[CNN] Epoch 017 | train_loss=0.076064 | val_loss=0.860853 | train_acc=0.9919 | val_acc=0.4400 | val_macro_f1=0.4338
+[CNN] Epoch 018 | train_loss=0.075444 | val_loss=0.108208 | train_acc=0.9922 | val_acc=0.9751 | val_macro_f1=0.9750
+[CNN] Epoch 019 | train_loss=0.071651 | val_loss=0.067966 | train_acc=0.9938 | val_acc=0.9950 | val_macro_f1=0.9949
+[CNN] Epoch 020 | train_loss=0.071123 | val_loss=0.068337 | train_acc=0.9941 | val_acc=0.9954 | val_macro_f1=0.9954
+[CNN] Epoch 021 | train_loss=0.071677 | val_loss=0.070927 | train_acc=0.9940 | val_acc=0.9939 | val_macro_f1=0.9939
+[CNN] Epoch 022 | train_loss=0.070492 | val_loss=0.067840 | train_acc=0.9942 | val_acc=0.9953 | val_macro_f1=0.9953
+[CNN] Epoch 023 | train_loss=0.070014 | val_loss=0.067680 | train_acc=0.9947 | val_acc=0.9954 | val_macro_f1=0.9954
+[CNN] Epoch 024 | train_loss=0.069659 | val_loss=0.077807 | train_acc=0.9949 | val_acc=0.9917 | val_macro_f1=0.9917
+[CNN] Epoch 025 | train_loss=0.069412 | val_loss=0.070136 | train_acc=0.9949 | val_acc=0.9942 | val_macro_f1=0.9942
+[CNN] Epoch 026 | train_loss=0.069760 | val_loss=0.068768 | train_acc=0.9947 | val_acc=0.9952 | val_macro_f1=0.9952
+[CNN] Epoch 027 | train_loss=0.069382 | val_loss=0.065915 | train_acc=0.9949 | val_acc=0.9961 | val_macro_f1=0.9961
+[CNN] Epoch 028 | train_loss=0.069678 | val_loss=0.066336 | train_acc=0.9948 | val_acc=0.9954 | val_macro_f1=0.9954
+[CNN] Epoch 029 | train_loss=0.068808 | val_loss=0.066036 | train_acc=0.9951 | val_acc=0.9959 | val_macro_f1=0.9959
+[CNN] Epoch 030 | train_loss=0.069186 | val_loss=0.067018 | train_acc=0.9948 | val_acc=0.9952 | val_macro_f1=0.9952
+
+=== Standalone CNN Results ===
+Accuracy (All Test):       0.7814
+Accuracy (Known Subset):   0.8656
+Accuracy (Unknown Subset): 0.3589
+Balanced Accuracy:         0.8039
+Macro Precision:           0.8167
+Macro Recall:              0.8039
+Macro F1:                  0.7808
+Attack Precision:          0.9625
+Attack Recall:             0.6408
+Attack F1:                 0.7694
+ROC-AUC:                   0.8828
+PR-AUC:                    0.9127
+Known Attack Recall:       0.7572
+Unknown Attack Recall:     0.3589
+Normal False PositiveRate: 0.0330
+Confusion Matrix [[TN, FP], [FN, TP]]:
+[[9391  320]
+ [4609 8224]]
+
+=== Hybrid Pipeline Results ===
+Accuracy (All Test):       0.8844
+Accuracy (Known Subset):   0.8943
+Accuracy (Unknown Subset): 0.8347
+Balanced Accuracy:         0.8850
+Macro Precision:           0.8813
+Macro Recall:              0.8850
+Macro F1:                  0.8828
+Attack Precision:          0.9131
+Attack Recall:             0.8808
+Attack F1:                 0.8966
+ROC-AUC:                   0.9572
+PR-AUC:                    0.9635
+Known Attack Recall:       0.8998
+Unknown Attack Recall:     0.8347
+Normal False PositiveRate: 0.1108
+Confusion Matrix [[TN, FP], [FN, TP]]:
+[[ 8635  1076]
+ [ 1530 11303]]
+
+=== Comparison To Historical Baselines ===
+aggressive_mode_reference: unknown_recall_delta=-0.1648 | normal_fpr_delta=-0.1792
+balanced_mode_reference: unknown_recall_delta=-0.0153 | normal_fpr_delta=-0.0292
+
+=== Leakage Audit ===
+Train/Test split source: KDDTrain+ / KDDTest+
+Preprocessing fit scope: train only
+Two-branch mode: enabled
+Autoencoder fit scope: normal-only train split samples
+SMOTE fit_resample scope: classifier branch train split features only
+CNN fit scope: SMOTE-augmented classifier branch train split features (plus val monitoring from train)
+Test used only for final transform/inference and metrics
+[Run] Test results saved to: /kaggle/working/training_runs/run_20260504_022940_577094/test_results.json
+[Run] Training log saved to: /kaggle/working/training_runs/run_20260504_022940_577094/train.log

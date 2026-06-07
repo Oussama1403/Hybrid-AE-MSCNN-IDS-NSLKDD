@@ -1,0 +1,33 @@
+{
+  "train_rows": 125973,
+  "test_rows": 22544,
+  "train_normal": 67343,
+  "train_anomaly": 58630,
+  "test_normal": 9711,
+  "test_anomaly": 12833,
+  "train_normal_ratio": 0.5345828074269883,
+  "train_anomaly_ratio": 0.4654171925730117,
+  "test_normal_ratio": 0.43075762952448543,
+  "test_anomaly_ratio": 0.5692423704755145,
+  "test_unknown_attack_type_count": 17,
+  "test_zero_day_sample_count": 3750,
+  "unknown_attack_types": [
+    "mscan",
+    "apache2",
+    "processtable",
+    "snmpguess",
+    "saint",
+    "mailbomb",
+    "snmpgetattack",
+    "httptunnel",
+    "named",
+    "ps",
+    "sendmail",
+    "xterm",
+    "xlock",
+    "xsnoop",
+    "sqlattack",
+    "udpstorm",
+    "worm"
+  ]
+}
