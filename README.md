@@ -1,11 +1,8 @@
 # Hybrid AE-MSCNN for Binary Zero-Day Network Intrusion Detection on NSL-KDD
 
-[![Python 3.12](https://img.shields.io/badge/Python-3.12-blue)](https://python.org)
-[![PyTorch 2.0](https://img.shields.io/badge/PyTorch-2.0-ee4c2c)](https://pytorch.org)
-[![NSL-KDD](https://img.shields.io/badge/Dataset-NSL--KDD-green)](https://www.unb.ca/cic/datasets/nsl.html)
-[![Kaggle](https://img.shields.io/badge/Kaggle-Notebook-20beff)](https://www.kaggle.com/code/oussamabensassi/organized-ae-cnn-main-pipeline)
-
 A hybrid deep learning architecture that combines an **Autoencoder (AE)** with a **Multi-Scale 1D CNN (MSCNN)** and a **learned MLP calibrator** for detecting zero-day (unknown) network intrusions. The system is evaluated on the **NSL-KDD** benchmark, where 17 attack types appear only in the test set and are never seen during training.
+
+The main pipeline is available on Kaggle: [organized-ae-cnn-main-pipeline](https://www.kaggle.com/code/oussamabensassi/organized-ae-cnn-main-pipeline).
 
 ---
 
