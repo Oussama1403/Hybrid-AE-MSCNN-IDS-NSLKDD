@@ -111,30 +111,6 @@ Raw Input (122-dim after OHE + scaling)
 
 ---
 
-## Dataset Shift and Zero-Day Analysis
-
-The `nslkdd_dataset_report` module provides a detailed analysis of the NSL-KDD dataset. It highlights the distributional shift between the training and test sets.
-
-**Key statistics:**
-- **KDDTrain+:** 125,973 samples (67,343 normal / 58,630 attacks)
-- **KDDTest+:** 22,544 samples (9,711 normal / 12,833 attacks)
-- **Zero-day attack types:** 17 attack labels present in KDDTest+ but absent from KDDTrain+
-- **Zero-day samples:** 3,750 (16.6% of the test set)
-
-**Zero-day attack types found in KDDTest+:**
-`mscan`, `apache2`, `processtable`, `snmpguess`, `saint`, `mailbomb`, `snmpgetattack`, `httptunnel`, `named`, `ps`, `sendmail`, `xterm`, `xlock`, `xsnoop`, `sqlattack`, `udpstorm`, `worm`
-
-The report includes plots for:
-- Binary and 5-class distribution shifts
-- Numerical feature drift (standardized mean shift, variance ratios)
-- Categorical feature share shifts (protocol_type, service, flag)
-- Correlation heatmap comparisons
-- Per-attack label counts and zero-day glance table
-
-Run `python nslkdd_dataset_report.py` to regenerate the report.
-
----
-
 ## Experimental Results
 
 ### Overall Performance
@@ -162,7 +138,7 @@ Run `python nslkdd_dataset_report.py` to regenerate the report.
 
 The hybrid architecture neutralized **13 of 17** unknown attack types, more than doubling the zero-day detection rate of the standalone CNN baseline.
 
-### Confusion Matrices
+### Confusion Matrices (Strict Split)
 
 | | Standalone CNN | Hybrid AE-MSCNN |
 |---|---|---|
@@ -170,6 +146,22 @@ The hybrid architecture neutralized **13 of 17** unknown attack types, more than
 | **FN / TP** | 4,609 / 8,224 | 1,530 / 11,303 |
 
 The hybrid system trades a modest increase in the false positive rate (3.3% to 11.1%) for a large improvement in unknown attack recall (35.9% to 83.5%).
+
+### Closed-World Performance (Merged Split 80/20)
+
+On the merged random split, where no zero-day separation exists, the CNN alone already performs well and the hybrid calibrator further boosts recall at the cost of a slightly higher FPR.
+
+| Metric | Standalone CNN | Hybrid AE-MSCNN + Calibrator |
+|---|---|---|
+| **Overall Accuracy** | 97.10% | 95.06% |
+| **Balanced Accuracy** | 97.20% | 95.23% |
+| **Macro F1-Score** | 97.10% | 95.06% |
+| **Attack Precision** | 94.59% | 90.76% |
+| **Attack Recall** | 99.69% | **99.90%** |
+| **Attack F1-Score** | 97.07% | 95.11% |
+| **ROC-AUC** | 0.9915 | **0.9990** |
+| **PR-AUC** | 0.9756 | **0.9983** |
+| **Normal FPR** | 5.29% | 9.43% |
 
 ---
 
@@ -238,10 +230,4 @@ python nslkdd_dataset_report.py --dataset-dir NSL-KDD/ --output-dir nslkdd_datas
 - **Visualization:** Matplotlib, Seaborn
 - **Hardware:** Optimized for NVIDIA T4 GPU (Kaggle environment)
 
----
 
-## References
-
-- M. Tavallaee, E. Bagheri, W. Lu, and A. A. Ghorbani, *"A detailed analysis of the KDD CUP 99 data set,"* IEEE CISDA, 2009.
-- NSL-KDD Dataset: [https://www.unb.ca/cic/datasets/nsl.html](https://www.unb.ca/cic/datasets/nsl.html)
-- H. Nguyen, *"NSL-KDD Dataset,"* Kaggle: [https://www.kaggle.com/datasets/hassan06/nslkdd](https://www.kaggle.com/datasets/hassan06/nslkdd)
